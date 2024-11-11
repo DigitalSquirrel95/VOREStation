@@ -108,7 +108,7 @@
 
 /datum/trait/neutral/bloodsucker/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/carbon/human/proc/bloodsuck
+	add_verb(H, /mob/living/carbon/human/proc/bloodsuck)
 
 /datum/trait/neutral/bloodsucker_freeform
 	name = "Bloodsucker"
@@ -129,7 +129,7 @@
 
 /datum/trait/neutral/bloodsucker_freeform/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/carbon/human/proc/bloodsuck
+	add_verb(H, /mob/living/carbon/human/proc/bloodsuck)
 
 /datum/trait/neutral/succubus_drain
 	name = "Succubus Drain"
@@ -139,9 +139,9 @@
 
 /datum/trait/neutral/succubus_drain/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/carbon/human/proc/succubus_drain
-	H.verbs |= /mob/living/carbon/human/proc/succubus_drain_finalize
-	H.verbs |= /mob/living/carbon/human/proc/succubus_drain_lethal
+	add_verb(H, /mob/living/carbon/human/proc/succubus_drain)
+	add_verb(H, /mob/living/carbon/human/proc/succubus_drain_finalize)
+	add_verb(H, /mob/living/carbon/human/proc/succubus_drain_lethal)
 
 /datum/trait/neutral/venom_bite
 	name = "Venomous Injection"
@@ -169,7 +169,7 @@
 
 /datum/trait/neutral/venom_bite/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/proc/injection
+	add_verb(H, /mob/living/proc/injection)
 	H.trait_injection_reagents += "microcillin"		// get small
 	H.trait_injection_reagents += "macrocillin"		// get BIG
 	H.trait_injection_reagents += "normalcillin"	// normal
@@ -201,7 +201,7 @@
 
 /datum/trait/neutral/long_vore/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/proc/long_vore
+	add_verb(H, /mob/living/proc/long_vore)
 
 /datum/trait/neutral/feeder
 	name = "Feeder"
@@ -211,7 +211,7 @@
 
 /datum/trait/neutral/feeder/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/carbon/human/proc/slime_feed
+	add_verb(H, /mob/living/carbon/human/proc/slime_feed)
 
 /datum/trait/neutral/stuffing_feeder
 	name = "Food Stuffer"
@@ -222,7 +222,7 @@
 
 /datum/trait/neutral/stuffing_feeder/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/proc/toggle_stuffing_mode
+	add_verb(H, /mob/living/proc/toggle_stuffing_mode)
 
 /datum/trait/neutral/hard_vore
 	name = "Brutal Predation"
@@ -232,7 +232,7 @@
 
 /datum/trait/neutral/hard_vore/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/proc/shred_limb
+	add_verb(H, /mob/living/proc/shred_limb)
 
 /datum/trait/neutral/trashcan
 	name = "Trash Can"
@@ -243,8 +243,8 @@
 
 /datum/trait/neutral/trashcan/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/proc/eat_trash
-	H.verbs |= /mob/living/proc/toggle_trash_catching //Ported from chompstation
+	add_verb(H, /mob/living/proc/eat_trash)
+	add_verb(H, /mob/living/proc/toggle_trash_catching) //Ported from chompstation
 
 /datum/trait/neutral/gem_eater
 	name = "Expensive Taste"
@@ -255,7 +255,7 @@
 
 /datum/trait/neutral/gem_eater/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/proc/eat_minerals
+	add_verb(H, /mob/living/proc/eat_minerals)
 
 /datum/trait/neutral/synth_chemfurnace
 	name = "Biofuel Processor"
@@ -292,7 +292,7 @@
 
 /datum/trait/neutral/glowing_eyes/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/carbon/human/proc/toggle_eye_glow
+	add_verb(H, /mob/living/carbon/human/proc/toggle_eye_glow)
 
 /datum/trait/neutral/glowing_body
 	name = "Glowing Body"
@@ -304,8 +304,8 @@
 
 /datum/trait/neutral/glowing_body/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/proc/glow_toggle
-	H.verbs |= /mob/living/proc/glow_color
+	add_verb(H, /mob/living/proc/glow_toggle)
+	add_verb(H, /mob/living/proc/glow_color)
 
 //Allergen traits! Not available to any species with a base allergens var.
 /datum/trait/neutral/allergy
@@ -733,7 +733,7 @@
 
 /datum/trait/neutral/dominate_predator/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/proc/dominate_predator
+	add_verb(H, /mob/proc/dominate_predator)
 
 /datum/trait/neutral/dominate_prey
 	name = "Dominate Prey"
@@ -743,7 +743,7 @@
 
 /datum/trait/neutral/dominate_prey/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/proc/dominate_prey
+	add_verb(H, /mob/living/proc/dominate_prey)
 
 /datum/trait/neutral/submit_to_prey
 	name = "Submit To Prey"
@@ -753,7 +753,7 @@
 
 /datum/trait/neutral/submit_to_prey/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/proc/lend_prey_control
+	add_verb(H, /mob/living/proc/lend_prey_control)
 
 /datum/trait/neutral/vertical_nom
 	name = "Vertical Nom"
@@ -763,7 +763,7 @@
 
 /datum/trait/neutral/vertical_nom/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/proc/vertical_nom
+	add_verb(H, /mob/living/proc/vertical_nom)
 
 /datum/trait/neutral/micro_size_down
 	name = "Light Frame"
@@ -859,7 +859,7 @@
 
 /datum/trait/neutral/synth_cosmetic_pain/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
 	..()
-	H.verbs |= /mob/living/carbon/human/proc/toggle_pain_module
+	add_verb(H, /mob/living/carbon/human/proc/toggle_pain_module)
 
 //Food preferences ported from RogueStar
 
@@ -1088,3 +1088,86 @@
 	/datum/trait/neutral/food_pref/coffee
 	)
 	our_allergens = list(ALLERGEN_STIMULANT)
+
+
+//////////////PHOBIAS/////////////////
+
+/datum/trait/neutral/nyctophobia
+	name = "Phobia: Nyctophobia"
+	desc = "You are afraid of the dark. When in very dark conditions, you will become afraid."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/nyctophobia/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
+	..()
+	H.phobias |= NYCTOPHOBIA
+
+/datum/trait/neutral/arachnophobia
+	name = "Phobia: Arachnophobia"
+	desc = "You are afraid of spiders. When you can see a large spider, you will become afraid."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/arachnophobia/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
+	..()
+	H.phobias |= ARACHNOPHOBIA
+
+/datum/trait/neutral/hemophobia
+	name = "Phobia: Hemophobia"
+	desc = "You are afraid of blood. When you can see large amounts of blood, you will become afraid."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/hemophobia/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
+	..()
+	H.phobias |= HEMOPHOBIA
+
+/datum/trait/neutral/thalassophobia
+	name = "Phobia: Thalassophobia"
+	desc = "You are afraid of deep water. When in deep water, you will become afraid."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/thalassophobia/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
+	..()
+	H.phobias |= THALASSOPHOBIA
+
+/datum/trait/neutral/clasutrophobia_minor
+	name = "Phobia: Claustrophobia (non-vore)"
+	desc = "You are afraid of tight, enclosed spaces. When inside of another object, you will become afraid."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/clasutrophobia_minor/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
+	..()
+	H.phobias |= CLAUSTROPHOBIA_MINOR
+
+/datum/trait/neutral/clasutrophobia_major
+	name = "Phobia: Claustrophobia (vore)"
+	desc = "You are afraid of tight, enclosed spaces. When inside of another object, including vore bellies, you will become afraid."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/clasutrophobia_major/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
+	..()
+	H.phobias |= CLAUSTROPHOBIA_MAJOR
+
+/datum/trait/neutral/anatidaephobia
+	name = "Phobia: Anatidaephobia"
+	desc = "You are afraid of ducks. When you can see a duck (even rubber ones), you will become afraid."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/anatidaephobia/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
+	..()
+	H.phobias |= ANATIDAEPHOBIA
+
+/datum/trait/neutral/agraviaphobia
+	name = "Phobia: Agraviaphobia"
+	desc = "You are afraid of a lack of gravity. When you find yourself floating, you will become afraid."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/agraviaphobia/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/trait_prefs = null)
+	..()
+	H.phobias |= AGRAVIAPHOBIA
